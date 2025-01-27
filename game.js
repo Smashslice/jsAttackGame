@@ -13,18 +13,18 @@ function startGameLoop(strength) {
     let attacks = 0
 
     while (strength > 0) {
-        let attackValue = getRandomAttackVlue(strength)
+        let attackValue = getRandomAttackValue(strength)
         strength -= attackValue
         attacks++
 
-        updaeGameLog(attacks, attackValue, strength)
+        updateGameLog(attacks, attackValue, strength)
     }
 
     document.getElementById("result").innerText = "Game Over! Total number of attacks: " + attacks
 }
 
 function getRandomAttackValue(max) {
-    return Math.floor(Math.random() + max) + 1
+    return Math.floor(Math.random() * max) + 1
 }
 
 function updateGameLog(attacks, attackValue, strength) {
